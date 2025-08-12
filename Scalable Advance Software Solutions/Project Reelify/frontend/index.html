@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Sharing</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+ 
+    <!-- HEADER  -->
+    <div class="header">
+      <div class="align-element">
+        <!-- LOGO  -->
+        <a href="#" class="logo">
+          <!-- <span><i class="bx bxl-tiktok"></i></span> -->
+          
+          <h4 class="logo2">REELIFY</h4>
+        </a>
+
+        
+        <!-- SMART ICONS  -->
+        <div class="smart-icons">
+          <button class="upload-btn" id="uploader-button">
+            <i class="bx bx-plus"></i>
+            Upload
+            <input
+              type="file"
+              name="video-uploader"
+              id="video-uploader"
+              hidden
+            />
+          </button>
+        </div>
+        <div class="logout-container">
+          <button class="logout-btn" id="logout-button">
+            Logout
+          </button>
+        </div>
+        <!-- SEARCH INPUT  -->
+        <!-- <div class="search-input">
+          <div class="input-box">
+            <input type="text" placeholder="Search" />
+            <button><i class="bx bx-search"></i></button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- SIDEBAR  -->
+    <div class="sidebar">
+      <!-- FOR YOU  -->
+      <ul>
+        <li class="active">
+          <span><i class="bx bxs-home"></i></span>
+          <span>For You</span>
+        </li>
+        <li>
+          <span><i class="bx bx-trending-up"></i></span>
+          <span class="new">Explore <span>New</span></span>
+        </li>
+        <li>
+          <span><i class="bx bx-user-plus"></i></span>
+          <span>Following</span>
+        </li>
+        <li>
+          <span><i class="bx bx-group"></i></span>
+          <span>Friends</span>
+        </li>
+        <li>
+          <span><i class="bx bx-video-plus"></i></span>
+          <span>Live</span>
+        </li>
+        <li>
+          <img src="img/profile.webp" class="channel-img" alt="" />
+          <span>Profile</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- VIDEOS  -->
+    <div class="videos">
+      <div class="align-element">
+        <!-- VIDEO 1 -->
+        <div class="video" id="mainVideoDiv1">
+          <div class="video-box">
+            <div class="video-info">
+              <div class="video-section">
+                <video id="video1" class="videoPlayer" loop></video>
+                <span class="video-play-icon"><i class="bx bx-play"></i></span>
+              </div>
+              <div class="user-info">
+                <h5>Smith</h5>
+                <p>Squid Game #game #enjoy #netflix #season</p>
+              </div>
+            </div>
+            <div class="video-desc">
+              <div class="user-profile">
+                <img src="img/user-5.jpeg" alt="" />
+                <span class="follow">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <ul>
+                <li>
+                  <span class="like"><i class="bx bxs-heart"></i></span>
+                  <span>1.7M</span>
+                </li>
+                <li>
+                  <button onclick="openCommentPopup()">
+                    <span><i class="bx bxs-message-rounded-dots"></i></span>
+                  </button>
+                  <div
+                    id="comment-popup"
+                    class="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center hidden"
+                  >
+                    <div class="bg-gray-800 rounded-lg p-6 w-11/12 max-w-lg">
+                      <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-bold text-white">
+                          Add a Comment
+                        </h2>
+                        <button
+                          class="text-red-500 text-xl font-bold"
+                          onclick="closeCommentPopup()"
+                        >
+                          &times;
+                        </button>
+                      </div>
+
+                      <!-- Comment Input -->
+                      <textarea
+                        id="comment-input"
+                        placeholder="Write your comment here..."
+                        class="w-full h-24 p-2 rounded bg-gray-700 text-white mb-4"
+                      ></textarea>
+
+                      <!-- Submit Button -->
+                      <div class="flex justify-end">
+                        <button
+                          class="bg-comment font-bold py-2 px-4 rounded"
+                          onclick="addComment('asfnaksjfna12qwfqbu')"
+                        >
+                          Post Comment
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <span>10.3k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-bookmark"></i></span>
+                  <span>160k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-share bx-flip-horizontal"></i></span>
+                  <span>297k</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- VIDEO 2 -->
+        <div class="video" id="mainVideoDiv2">
+          <div class="video-box">
+            <div class="video-info">
+              <div class="video-section">
+                <video id="video2" class="videoPlayer" loop></video>
+                <span class="video-play-icon"><i class="bx bx-play"></i></span>
+              </div>
+              <div class="user-info">
+                <h5>John</h5>
+                <p>Cake  #birthday #party #bestcake</p>
+              </div>
+            </div>
+            <div class="video-desc">
+              <div class="user-profile">
+                <img src="img/user-6.jpeg" alt="" />
+                <span class="follow">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <ul>
+                <li>
+                  <span class="like"><i class="bx bxs-heart"></i></span>
+                  <span>12.2M</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-message-rounded-dots"></i></span>
+                  <span>34k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-bookmark"></i></span>
+                  <span>56k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-share bx-flip-horizontal"></i></span>
+                  <span>114k</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- VIDEO 3 -->
+        <div class="video" id="mainVideoDiv3">
+          <div class="video-box">
+            <div class="video-info">
+              <div class="video-section">
+                <video id="video3" class="videoPlayer" loop></video>
+                <span class="video-play-icon"><i class="bx bx-play"></i></span>
+              </div>
+              <div class="user-info">
+                <h5>Alex</h5>
+                <p>
+                  Color Mixing. Check how new colors are formed.
+                </p>
+              </div>
+            </div>
+            <div class="video-desc">
+              <div class="user-profile">
+                <img src="img/user-7.jpeg" alt="" />
+                <span class="follow">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <ul>
+                <li>
+                  <span class="like"><i class="bx bxs-heart"></i></span>
+                  <span>32.7M</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-message-rounded-dots"></i></span>
+                  <span>64.3k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-bookmark"></i></span>
+                  <span>79.7k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-share bx-flip-horizontal"></i></span>
+                  <span>175k</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- VIDEO 4 -->
+        <div class="video" id="mainVideoDiv4">
+          <div class="video-box">
+            <div class="video-info">
+              <div class="video-section">
+                <video id="video4" class="videoPlayer" loop></video>
+                <span class="video-play-icon"><i class="bx bx-play"></i></span>
+              </div>
+              <div class="user-info">
+                <h5>Jenny</h5>
+                <p>
+                  Funny Video #dog #panda #cat #donkey #animals
+                </p>
+              </div>
+            </div>
+            <div class="video-desc">
+              <div class="user-profile">
+                <img src="img/user-8.jpeg" alt="" />
+                <span class="follow">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <ul>
+                <li>
+                  <span class="like"><i class="bx bxs-heart"></i></span>
+                  <span>6.1M</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-message-rounded-dots"></i></span>
+                  <span>66.7k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-bookmark"></i></span>
+                  <span>98k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-share bx-flip-horizontal"></i></span>
+                  <span>456k</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- VIDEO 5 -->
+        <div class="video" id="mainVideoDiv5">
+          <div class="video-box">
+            <div class="video-info">
+              <div class="video-section">
+                <video id="video5" class="videoPlayer" loop></video>
+                <span class="video-play-icon"><i class="bx bx-play"></i></span>
+              </div>
+              <div class="user-info">
+                <h5>Mehran</h5>
+                <p>Game  #fun #playing #gaming #chill</p>
+              </div>
+            </div>
+            <div class="video-desc">
+              <div class="user-profile">
+                <img src="img/user-9.jpeg" alt="" />
+                <span class="follow">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <ul>
+                <li>
+                  <span class="like"><i class="bx bxs-heart"></i></span>
+                  <span>57.2M</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-message-rounded-dots"></i></span>
+                  <span>45.3k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-bookmark"></i></span>
+                  <span>77k</span>
+                </li>
+                <li>
+                  <span><i class="bx bxs-share bx-flip-horizontal"></i></span>
+                  <span>546k</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      const role = sessionStorage.getItem("role");
+      if (role !== "creator") {
+        alert("Access denied!");
+        window.location.href = "login.html"; // Redirect to login
+      }
+    </script>
+    
+    <!-- SCRIPT LINK  -->
+    <script src="app.js"></script>
+    
+  </body>
+</html>
